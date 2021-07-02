@@ -15,13 +15,12 @@ const Search = () => {
   
   const { search: { placeholder } } = site
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(updateQuery(e.target.value))
-  }
-
   const debouncedChangeHandler  = useMemo(() => {
+    const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(updateQuery(e.target.value))
+    }
     return debounce(changeHandler, 300)
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     dispatch(cleanTweets())
@@ -32,7 +31,7 @@ const Search = () => {
     }
     return () => {
     }
-  }, [query])
+  }, [dispatch, query])
 
   return (
     <section className="Search">

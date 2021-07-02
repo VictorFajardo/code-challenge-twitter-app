@@ -1,0 +1,22 @@
+.Filter {
+  margin: 10px;
+  width: 250px;
+  float: right;
+}
+
+.Filter-container {
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .05);
+  border-radius: 4px;
+  padding: 9px 12px;
+}
+
+.Filter-container-title {
+  padding: 2px;
+  font-size: 16px;
+  margin: 0;
+}
+
+.Filter-container-title.active {
+  margin-bottom: 22px;
+}

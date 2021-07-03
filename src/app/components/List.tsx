@@ -4,7 +4,7 @@ import { fetchTweets, selectTweets } from '../../features/tweets/tweetsSlice'
 import { selectMaxId } from '../../features/meta/metaSlice';
 import { selectFilter } from '../../features/filter/filterSlice';
 import site from '../../data/site'
-import '../sass/list.css'
+import '../../sass/list.css'
 
 const List = () => {
   const { list: { cta } } = site

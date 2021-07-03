@@ -1,28 +1,33 @@
 <h2 align="center">Coding Challenge: Twitter App</h2>
 
 - [🚀 Demo](#-demo)
+- [✨ Development](#-development)
+- [📁 File Structure](#-file-structure)
+- [⚛️ Redux Toolkit](#-redux-toolkit)
+- [📑 Documentation Links](#-documentation-links)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+---
 ### 🚀 Demo
+
 You can access the demo for the fullpage navigation here:\
 [https://coding-challenge-twitter-app.netlify.app/](https://coding-challenge-twitter-app.netlify.app/)
 ### ✨ Development
 
 In the project directory, you can run:
 
-### `yarn start`
+**`yarn start`**
 
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `yarn test`
+**`yarn test`**
 
 Launches the test runner in the interactive watch mode.<br />
 
-### `yarn build`
+**`yarn build`**
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
 ### 📁 File Structure
 
 ```
@@ -67,14 +72,61 @@ Builds the app for production to the `build` folder. It correctly bundles React 
     └── 📁store
         └── index.ts                  // app store file
 ```
-
 ### ⚛️ Redux Toolkit
 
 This app uses **Redux Toolkit** as source of state managment, for more information visit:
 
 - [Redux Toolkit - Tutorials Overview](https://redux-toolkit.js.org/tutorials/overview).
+### 🐦 Tweet Feed: App Logic
 
-### 📑 More Documentation
+**Fetching Tweets**\
+After a query is typed in the `🔍 Search by keyword` input filed, the `updateQuery(query)` action is dispatched to reduce the input query value into `state.query`.\
+After `state.query` is updated, the `fetchTweets(query, max_id = 0)` action is dispatched, this is an async request that create a promise, after the promise is solved 3 reducers process the data returned and dispatch actions to update `state.meta`, `state.hashtags`, and `state.tweets`.
+
+
+
+### 🗄️ Store Structure
+
+```javascript
+  {
+    filter: {
+      value: Array<string>
+    },
+    hashtags: {
+      value: Array<string>
+    },
+    meta: {
+      completed_in: number,
+      count: number,
+      max_id: number,
+      query: string
+    },
+    query: {
+      value: string
+    },
+    {
+      tweets: {
+        status: string,
+        value: [
+          {
+            full_text: string,
+            hashtags: Array<string>,
+            profile_image_url: string,
+            screen_name: string,
+            urls: [
+              {
+                display_url: string,
+                url: string,
+              }
+            ],
+            user_mentions: Array<string>
+          }
+        ]
+      }
+    }
+  }
+```
+### 📑 Documentation Links
 
 - [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 - [React documentation](https://reactjs.org/).

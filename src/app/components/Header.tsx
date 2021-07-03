@@ -1,5 +1,5 @@
 import site from "../../data/site"
-import '../sass/header.css'
+import '../../sass/header.css'
 
 const { header: { title } } = site
 

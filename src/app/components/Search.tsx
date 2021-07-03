@@ -6,13 +6,14 @@ import { cleanFilter } from '../../features/filter/filterSlice'
 import { cleanHashtags } from '../../features/hashtags/hashtagsSlice'
 import debounce from 'lodash.debounce';
 import site from '../../data/site'
-import '../sass/search.css'
-import MagnifyingGlass from '../img/magnifying-glass.svg';
+import '../../sass/search.css'
+import MagnifyingGlass from '../../img/magnifying-glass.svg';
+import { store } from '../../store';
+
 
 const Search = () => {
   const query = useAppSelector(selectQuery)
   const dispatch = useAppDispatch()
-  
   const { search: { placeholder } } = site
 
   const debouncedChangeHandler  = useMemo(() => {
@@ -30,6 +31,7 @@ const Search = () => {
       dispatch(fetchTweets({query: query, max_id: 0}))
     }
     return () => {
+      console.log(store.getState());
     }
   }, [dispatch, query])
 

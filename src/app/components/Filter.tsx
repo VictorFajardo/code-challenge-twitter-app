@@ -3,7 +3,7 @@ import { selectHashtags } from '../../features/hashtags/hashtagsSlice'
 import { selectFilter } from '../../features/filter/filterSlice'
 import Hashtag from './Hashtag'
 import site from '../../data/site'
-import '../sass/filter.css'
+import '../../sass/filter.css'
 
 const Filter = () => {
   const { filter: { title } } = site

@@ -1,9 +1,9 @@
-import { useAppSelector, useAppDispatch } from '../common/hooks'
-import { selectQuery } from '../features/query/querySlice';
-import { fetchTweets, selectTweets } from '../features/tweets/tweetsSlice'
-import { selectMaxId } from '../features/meta/metaSlice';
-import { selectFilter } from '../features/filter/filterSlice';
-import site from '../data/site'
+import { useAppSelector, useAppDispatch } from '../../common/hooks'
+import { selectQuery } from '../../features/query/querySlice';
+import { fetchTweets, selectTweets } from '../../features/tweets/tweetsSlice'
+import { selectMaxId } from '../../features/meta/metaSlice';
+import { selectFilter } from '../../features/filter/filterSlice';
+import site from '../../data/site'
 import '../sass/list.css'
 
 const List = () => {

@@ -1,8 +1,8 @@
-import { useAppSelector } from '../common/hooks';
-import { selectHashtags } from '../features/hashtags/hashtagsSlice'
-import { selectFilter } from '../features/filter/filterSlice'
+import { useAppSelector } from '../../common/hooks';
+import { selectHashtags } from '../../features/hashtags/hashtagsSlice'
+import { selectFilter } from '../../features/filter/filterSlice'
 import Hashtag from './Hashtag'
-import site from '../data/site'
+import site from '../../data/site'
 import '../sass/filter.css'
 
 const Filter = () => {

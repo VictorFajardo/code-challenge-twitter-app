@@ -1,11 +1,11 @@
 import { useEffect, useMemo } from 'react';
-import { useAppSelector, useAppDispatch } from '../common/hooks'
-import { updateQuery, selectQuery } from '../features/query/querySlice'
-import { cleanTweets, fetchTweets } from '../features/tweets/tweetsSlice'
-import { cleanFilter } from '../features/filter/filterSlice'
-import { cleanHashtags } from '../features/hashtags/hashtagsSlice'
+import { useAppSelector, useAppDispatch } from '../../common/hooks'
+import { updateQuery, selectQuery } from '../../features/query/querySlice'
+import { cleanTweets, fetchTweets } from '../../features/tweets/tweetsSlice'
+import { cleanFilter } from '../../features/filter/filterSlice'
+import { cleanHashtags } from '../../features/hashtags/hashtagsSlice'
 import debounce from 'lodash.debounce';
-import site from '../data/site'
+import site from '../../data/site'
 import '../sass/search.css'
 import MagnifyingGlass from '../img/magnifying-glass.svg';
 

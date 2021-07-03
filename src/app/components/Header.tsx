@@ -1,4 +1,4 @@
-import site from "../data/site"
+import site from "../../data/site"
 import '../sass/header.css'
 
 const { header: { title } } = site

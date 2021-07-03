@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useAppDispatch } from '../common/hooks'
-import { addFilter, deleteFilter } from '../features/filter/filterSlice'
+import { useAppDispatch } from '../../common/hooks'
+import { addFilter, deleteFilter } from '../../features/filter/filterSlice'
 import '../sass/hashtag.css'
 
 const Hashtag = (props: any) => {

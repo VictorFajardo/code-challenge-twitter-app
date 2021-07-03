@@ -3,7 +3,9 @@
 - [🚀 Demo](#-demo)
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
-- [⚛️ Redux Toolkit](#-redux-toolkit)
+- [📁 Redux Toolkit](#-redux-toolkit)
+- [📁 Tweet Feed: User Interactione](#-tweet-feed-user-interaction)
+- [📁 Store Structure](#-store-structure)
 - [📑 Documentation Links](#-documentation-links)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
@@ -77,17 +79,27 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 This app uses **Redux Toolkit** as source of state managment, for more information visit:
 
 - [Redux Toolkit - Tutorials Overview](https://redux-toolkit.js.org/tutorials/overview).
-### 🐦 Tweet Feed: App Logic
+### 🐦 Tweet Feed: User Interaction
 
-**Fetching Tweets**\ 
-After a query is typed in the `🔍 Search by keyword` input filed, the `updateQuery(query)` action is dispatched to reduce the input query value into `state.query`.\
-After `state.query` is updated, the `fetchTweets(query, max_id = 0)` action is dispatched, this is an async request that create a Promise, after the Promise is solved the returned data is received and processed by 3 reducers to update `state.meta`, `state.hashtags`, and `state.tweets`.
+**Fetching Tweets**\
+After a query is typed in the `🔍 Search by keyword` input filed (by a debounce functionality) the `updateQuery(query)` action is dispatched to reduce the input query value into `state.query`.\
+After `state.query` is updated, the `cleanTweets()`, `cleanHashtags()`, `cleanFilter()` actions are dispatched to clean any previous search, then the `fetchTweets(state.query, max_id = 0)` action is dispatched, this is an async request that create a Promise, after the Promise is solved the returned data is received and processed by 3 reducers to update `state.meta`, `state.hashtags`, and `state.tweets`.
+
+>List.tsx will renders the updated `stage.tweets`.
+
+>Filter.tsx will renders the upload `stage.hashtags`.
 
 **Loading More Tweets**\
+After the `Load more tweets` cta is clicked the `fecthTweets(state.query, max_id = state.max_id)` action is dispatched, this is an async request that create a Promise, after the Promise is solved the returned data is received and processed by 3 reducers to update `state.meta`, `state.hashtags`, and `state.tweets`.
 
+>List.tsx will renders the updated `stage.tweets` filtering the result when a hashtag inside the tweet will be equal to an element of the array `state.filter`.
 
+>Filter.tsx will renders the upload `stage.hashtags` withot affect the current `state.filter`.
 
+**Filter By Hashtag**\
+After a cta `Hashtag` is clicked the `addFilter(hashtag)` action is dispatched to reduce the hashtag value adding it into the array `state.filter`, is the cta has been already clicked `active = true` the `removeFilter(hashtag)` action is dispatched to reduce the hashtag value removing it from the array `state.hahtags`.
 
+>List.tsx will renders `stage.tweets` filtering the result when a hashtag inside the tweet will be equal to an element of the array `state.filter`.
 ### 🗄️ Store Structure
 
 ```javascript

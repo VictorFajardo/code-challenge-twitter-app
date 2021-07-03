@@ -79,9 +79,12 @@ This app uses **Redux Toolkit** as source of state managment, for more informati
 - [Redux Toolkit - Tutorials Overview](https://redux-toolkit.js.org/tutorials/overview).
 ### 🐦 Tweet Feed: App Logic
 
-**Fetching Tweets**\
+**Fetching Tweets**\ 
 After a query is typed in the `🔍 Search by keyword` input filed, the `updateQuery(query)` action is dispatched to reduce the input query value into `state.query`.\
-After `state.query` is updated, the `fetchTweets(query, max_id = 0)` action is dispatched, this is an async request that create a promise, after the promise is solved 3 reducers process the data returned and dispatch actions to update `state.meta`, `state.hashtags`, and `state.tweets`.
+After `state.query` is updated, the `fetchTweets(query, max_id = 0)` action is dispatched, this is an async request that create a Promise, after the Promise is solved the returned data is received and processed by 3 reducers to update `state.meta`, `state.hashtags`, and `state.tweets`.
+
+**Loading More Tweets**\
+
 
 
 

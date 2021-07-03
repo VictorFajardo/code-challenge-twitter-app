@@ -74,7 +74,7 @@ Builds the app for production to the `build` folder. It correctly bundles React 
     └── 📁store
         └── index.ts                  // app store file
 ```
-### Redux Toolkit
+### ⚛️ Redux Toolkit
 
 This app uses **Redux Toolkit** as source of state managment, for more information visit:
 

@@ -4,7 +4,7 @@
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
 - [📁 Redux Toolkit](#-redux-toolkit)
-- [📁 Tweet Feed: User Interactione](#-tweet-feed-user-interaction)
+- [📁 Tweet Feed: User Interaction](#-tweet-feed-user-interaction)
 - [📁 Store Structure](#-store-structure)
 - [📑 Documentation Links](#-documentation-links)
 

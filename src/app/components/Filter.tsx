@@ -1,7 +1,7 @@
 import { useAppSelector } from '../../common/hooks';
 import { selectHashtags } from '../../features/hashtags/hashtagsSlice'
 import { selectFilter } from '../../features/filter/filterSlice'
-import Hashtag from './Hashtag'
+import Hashtag from './Hashtags/FilterHashtag'
 import site from '../../data/site'
 import '../../sass/filter.css'
 

@@ -1,4 +1,4 @@
-<h2 align="center">Coding Challenge: Twitter App</h2>
+<h2 align="center">Code Challenge: Twitter App</h2>
 
 - [🚀 Demo](#-demo)
 - [✨ Development](#-development)

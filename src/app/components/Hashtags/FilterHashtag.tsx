@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import { useAppDispatch } from '../../common/hooks'
-import { addFilter, deleteFilter } from '../../features/filter/filterSlice'
-import '../../sass/hashtag.css'
+import { useAppDispatch } from '../../../common/hooks'
+import { addFilter, deleteFilter } from '../../../features/filter/filterSlice'
+import '../../../sass/hashtag.css'
 
-const Hashtag = (props: any) => {
+const FilterHashtag = (props: any) => {
   const { text, status } = props
   const dispatch = useAppDispatch()
   const [selected, onSelected] = useState(status)
@@ -28,4 +28,4 @@ const Hashtag = (props: any) => {
   )
 }
 
-export default Hashtag
+export default FilterHashtag

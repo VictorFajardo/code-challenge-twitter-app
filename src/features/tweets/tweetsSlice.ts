@@ -25,7 +25,6 @@ export const fetchTweets = createAsyncThunk(
     if (response.request.status === 200) {
       return response.data;
     } else {
-      console.log(response)
       return null
     }
   }

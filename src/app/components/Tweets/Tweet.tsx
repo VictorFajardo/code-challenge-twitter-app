@@ -1,5 +1,6 @@
 import BaseHashtag from '../Hashtags/BaseHashtag'
 import styled from 'styled-components'
+import Verified from '../../../img/verified.svg'
 
 const Wrapper = styled.li`
 list-style-type: none;
@@ -13,7 +14,7 @@ padding: 14px 12px 10px 16px;
 @media all and (min-width: 860px) {
   padding: 16px 12px 10px 14px;
 }
-> img {
+img {
   border-radius: 100%;
   width: 52px;
   @media all and (min-width: 860px) {
@@ -36,6 +37,10 @@ const Name = styled.p`
     font-size: 14.5px;
     letter-spacing: -0.3px;
   }
+  img {
+    width: 16px;
+    vertical-align: text-bottom;
+  }
 `
 const Text = styled.p`
   margin: 10px 0 16px;
@@ -48,18 +53,21 @@ interface Props {
   hashtags: Array<string>,
   profile_image_url: string,
   screen_name: string,
+  verified: boolean,
 }
 
 const Tweet = (props: Props) => {
-  const { full_text, hashtags, profile_image_url, screen_name } = props
+  const { full_text, verified, hashtags, profile_image_url, screen_name } = props
 
   return (
     <Wrapper>
       <Avatar>
-        <img src={profile_image_url} alt={`@${screen_name}`} />
+        <a href={`https://twitter.com/${screen_name}`} target="_blank" rel="noreferrer" title={`@${screen_name}`}>
+          <img src={profile_image_url} alt={`@${screen_name}`} />
+        </a>
       </Avatar>
       <Body>
-        <Name><b>@{screen_name}</b></Name>
+        <Name><a href={`https://twitter.com/${screen_name}`} target="_blank" rel="noreferrer" title={`@${screen_name}`}><b>@{screen_name}</b> {verified && <img src={Verified} alt="Verified" />}</a></Name>
         <Text dangerouslySetInnerHTML={{ __html: full_text }} />
         {hashtags.length > 0 && hashtags.map((text: string, i: number) => {
           return (

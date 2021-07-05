@@ -42,7 +42,7 @@ const FilterHashtag = (props:Props) => {
   }
 
   return (
-    <Hashtag selected={selected} role="button" onClick={() => handleOnClick()}>#{text}</Hashtag>
+    <Hashtag selected={selected} role="button" onClick={() => handleOnClick()} title={`#${text}`}>#{text}</Hashtag>
   )
 }
 

@@ -4,7 +4,6 @@ import { updateQuery, selectQuery } from '../../features/query/querySlice'
 import { cleanTweets, fetchTweets } from '../../features/tweets/tweetsSlice'
 import { cleanFilter } from '../../features/filter/filterSlice'
 import { cleanHashtags } from '../../features/hashtags/hashtagsSlice'
-import { store } from '../../store';
 import debounce from 'lodash.debounce';
 import styled from 'styled-components';
 import MagnifyingGlass from '../../img/magnifying-glass.svg';
@@ -73,22 +72,11 @@ const Search = () => {
   }, [dispatch])
 
   useEffect(() => {
-    console.log(store.getState());
-    return () => {
-      // cleanup
-    }
-  })
-
-  useEffect(() => {
     dispatch(cleanTweets())
     dispatch(cleanHashtags())
     dispatch(cleanFilter())
     if (query.length) {
       dispatch(fetchTweets({query: query, max_id: '0'}))
-    }
-    return () => {
-      // ! development
-      // console.log(store.getState());
     }
   }, [dispatch, query])
 

@@ -11,4 +11,6 @@ test('renders learn react link', () => {
   );
 
   expect(getByText(/Tweet Feed/i)).toBeInTheDocument();
+
+  expect(getByText(/Filter by hashtag/i)).toBeInTheDocument();
 });

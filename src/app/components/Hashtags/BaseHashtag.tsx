@@ -25,7 +25,7 @@ const BaseHashtag = (props: Props) => {
   const { text } = props
 
   return (
-    <Hashtag href={`https://twitter.com/hashtag/${text}`} role="button" className="List-tweet-hashtag" target="_blank" rel="noreferrer">#{text}</Hashtag>
+    <Hashtag href={`https://twitter.com/hashtag/${text}`} className="List-tweet-hashtag" target="_blank" rel="noreferrer" title={`#${text}`}>#{text}</Hashtag>
   )
 }
 

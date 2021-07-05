@@ -1,6 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import desktop from '../desktop.png'
-import mobile from '../mobile.png'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -12,12 +10,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: #f8f9f9;
     color: rgb(83, 100, 113);
     line-height: 20px;
-    /* background-image: url(${mobile}); */
     background-position: 50% 0%;
     background-repeat: no-repeat;
-    @media all and (min-width: 860px) {
-      /* background-image: url(${desktop}); */
-    }
   }
 
   code {
@@ -30,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
   }
   
   #root {
-    /* width: 100vw; */
     margin: 0 auto;
     box-sizing: border-box;
     @media all and (min-width: 860px) {

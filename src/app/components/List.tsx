@@ -63,7 +63,6 @@ const List = (props: Props) => {
   }, [setHeight])
 
   useLayoutEffect(() => {
-    console.log('change');
     setHeight(refList.current?.offsetHeight ? Math.round(refList.current?.offsetHeight + 1) + basicHeight : basicHeight)
   }, [setHeight, tweets, filter])
 
@@ -82,9 +81,10 @@ const List = (props: Props) => {
                 }
                 return true
               })
-              .map(({ full_text, screen_name, profile_image_url, hashtags }: { full_text: string, screen_name: string, profile_image_url: string, hashtags: Array<string> }, i: number) => {
+              // full_text: string, screen_name: string, verified: boolean, profile_image_url: string, hashtags: Array<string>
+              .map(({ full_text, screen_name, verified, profile_image_url, hashtags }, i: number) => {
                 return (
-                  <Tweet key={i} full_text={full_text} hashtags={hashtags} profile_image_url={profile_image_url} screen_name={screen_name} />
+                  <Tweet key={i} full_text={full_text} screen_name={screen_name} verified={verified} profile_image_url={profile_image_url} hashtags={hashtags} />
                 )
               })
             }

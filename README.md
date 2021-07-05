@@ -1,4 +1,10 @@
 <h2 align="center">Code Challenge: Twitter App</h2>
+<h4 align="center">
+  Architect designed and developed by <a href="mailto:fajardo.de.leon@gmail.com">Victor Fajardo</a><br />
+  [ <a href="https://www.linkedin.com/in/victorfajardo/" target="_blank">linkedin.com/in/victorfajardo</a> | <a href="https://github.com/VictorFajardo" target="_blank">github.com/VictorFajardo</a> | <a href="https://stackshare.io/victorfajardo/software-engineering" target="_blank">stackshare.io/victorfajardo</a> ]
+</h4>
+
+---
 
 - [🚀 Demo](#-demo)
 - [✨ Development](#-development)
@@ -16,8 +22,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Please visit the demo for the fullpage navigation here:\
 [https://coding-challenge-twitter-app.netlify.app/](https://coding-challenge-twitter-app.netlify.app/)
-### ✨ Development
 
+**Desktop View:**
+<p align="center">
+  <img src="./docs/desktop.png" width="100%">
+</p>
+
+**Mobile View:**
+<p align="center">
+  <img src="./docs/mobile.png" height="600px">
+</p>
+
+### ✨ Development
 In the project directory, you can run:
 
 **`yarn start`**
@@ -38,12 +54,17 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 │── package.json
 │── README.md
 │── tsconfig.json
+├── 📁docs                                // contains files for the documentation
 ├── 📁build
 ├── 📁public
+├── 📁proxy
+│   ├── index.js                          // Node/Express proxy server main file
 └── 📁src
     ├── index.tsx                         // initialize the app, invokes App.tsx
+    ├── react-app-env.d.ts                // create-react app environment file
+    ├── setupTests.ts                     // create-react app test config file
     ├── 📁app
-    │   ├── App.test.tsx                  // App test cases
+    │   ├── App.test.tsx                  // App test cases suite
     │   └── App.tsx                       // App component, includes all the components
     │   ├── 📁components
     │   │   ├── Filter.tsx                // section component, renders hastags to be filtered
@@ -62,18 +83,24 @@ Builds the app for production to the `build` folder. It correctly bundles React 
     │   └── site.ts                       // all the app texts to be rendered information
     ├── 📁features
     │   ├── 📁filter
+    │   │   └── filterSlice.test.ts       // filterSlice test cases suite
     │   │   └── filterSlice.ts            // actions and reducer for state.filter
     │   ├── 📁hashtags
+    │   │   └── hashtagsSlice.test.ts     // hashtagsSlice test cases suite
     │   │   └── hashtagsSlice.ts          // actions and reducer for state.hashtags
     │   ├── 📁meta
+    │   │   └── metaSlice.test.ts         // metaSlice test cases suite
     │   │   └── metaSlice.ts              // actions and reducer for state.meta
     │   ├── 📁query
+    │   │   └── querySlice.test.ts        // querySlice test cases suite
     │   │   └── querySlice.ts             // actions and reducer for state.query
     │   └── 📁tweets
+    │   │   └── tweetsSlice.test.ts       // tweetsSlice test cases suite
     │       ├── tweetsSlice.ts            // actions and reducer for state.query
     │       └── tweetsApi.ts              // async request for data
     ├── 📁img
     │   └── magnifying-glass.svg          // icon for the Search component
+    │   └── verified.svg                  // icon for the Tweet component
     └── 📁store
         └── index.ts                      // app store file
     └── 📁style
@@ -145,7 +172,8 @@ After a cta `Hashtag` is clicked the `addFilter(hashtag)` action is dispatched t
                 url: string,
               }
             ],
-            user_mentions: Array<string>
+            user_mentions: Array<string>,
+            verified: boolean
           }
         ]
       }

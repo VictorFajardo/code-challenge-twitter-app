@@ -41,6 +41,9 @@ const Name = styled.p`
     width: 16px;
     vertical-align: text-bottom;
   }
+  a {
+    text-decoration: none;
+  }
 `
 const Text = styled.p`
   margin: 10px 0 16px;

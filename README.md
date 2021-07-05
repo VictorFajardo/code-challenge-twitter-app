@@ -21,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### 🚀 Demo
 
 Please visit the demo for the fullpage navigation here:\
-[https://coding-challenge-twitter-app.netlify.app/](https://coding-challenge-twitter-app.netlify.app/)
+[https://code-challenge-twitter-app.netlify.app/](https://code-challenge-twitter-app.netlify.app/)
 
 **Desktop View:**
 <p align="center">

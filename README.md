@@ -4,7 +4,7 @@
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
 - [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkitt)
-- [💅 CSS-IN-JS : Styled Components](#-css-in-js-styled-components)
+- [💅 CSS-IN-JS: Styled Components](#-css-in-js-styled-components)
 - [🐦 Tweet Feed: User Interaction](#-tweet-feed-user-interaction)
 - [🗄️ Store Structure](#%EF%B8%8F-store-structure)
 - [📑 Documentation Links](#-documentation-links)
@@ -85,7 +85,7 @@ This app uses **Redux Toolkit** as source of state managment, for more informati
 
 - [Redux Toolkit - Tutorials Overview](https://redux-toolkit.js.org/tutorials/overview).
 
-### 💅 CSS-IN-JS : Styled Components
+### 💅 CSS-IN-JS: Styled Components
 
 This app uses **Styled Components** to manage the all the style rules. Every component file has its own component style rules, aditionally a global style file can be founded in `/style/GlobalStyle.ts`, for more information visit:
 

@@ -12,6 +12,9 @@ express()
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   })
+  .get('/', (req, res, next) => {
+    res.send('SERVER RUNNING!')
+  })
   /** Get method to fetch tweets based on params
    * @param {string} maxId - The max_id value, will returs values less than this one, '0' by app default
    * @param {number} c - The amount of results, 5 by app default

@@ -29,7 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
-    "server": "node proxy/index.js",
+    "proxy": "node proxy/index.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

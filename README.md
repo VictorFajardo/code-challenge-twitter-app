@@ -7,6 +7,7 @@
 ---
 
 - [🚀 Demo](#-demo)
+- [📡 Proxy Server](#-proxy-server)
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
 - [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkitt)
@@ -36,6 +37,10 @@ Please visit the demo for the fullpage navigation here:\
 ### ✨ Development
 In the project directory, you can run:
 
+**`yarn proxy`**
+
+Runs the Node/Express proxy server. Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
 **`yarn start`**
 
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -47,6 +52,18 @@ Launches the test runner in the interactive watch mode.<br />
 **`yarn build`**
 
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+
+### 📡 Proxy Server
+
+The Twitter API does not support CORS. Therefore, the Proxy Server running on port 5000 is the intermediary between the app and the Twitter API.
+
+**Example Call to the Proxy Server**
+<p align="center">
+  <img src="./docs/proxy.png" width="100%">
+</p>
+
+> The data returned by the proxy server has been previously transformed according to the project specifications, no data transformations take place on the client side.
+
 ### 📁 File Structure
 
 ```

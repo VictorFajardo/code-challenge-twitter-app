@@ -4,7 +4,7 @@
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
 - [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkitt)
-- [💅 CSS-IN-JS : Styled Components](-css-in-js-styled-components)
+- [💅 CSS-IN-JS : Styled Components](#-css-in-js-styled-components)
 - [🐦 Tweet Feed: User Interaction](#-tweet-feed-user-interaction)
 - [🗄️ Store Structure](#%EF%B8%8F-store-structure)
 - [📑 Documentation Links](#-documentation-links)
@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ---
 ### 🚀 Demo
 
-You can access the demo for the fullpage navigation here:\
+Please visit the demo for the fullpage navigation here:\
 [https://coding-challenge-twitter-app.netlify.app/](https://coding-challenge-twitter-app.netlify.app/)
 ### ✨ Development
 

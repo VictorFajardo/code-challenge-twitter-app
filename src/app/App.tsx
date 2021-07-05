@@ -2,18 +2,18 @@ import Search from './components/Search'
 import List from './components/List'
 import Filter from './components/Filter'
 import Header from './components/Header';
-import Test from './Test'
-import './App.css';
+import { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [height, setHeight] = useState<number>(0)
+  
   return (
     <>
-      {/* <Test /> */}
       <Header />
-      <main>
+      <main style={{ height: height }}>
         <Search />
         <Filter />
-        <List />
+        <List setHeight={setHeight}/>
       </main>
     </>
   );

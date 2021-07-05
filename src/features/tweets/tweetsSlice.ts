@@ -12,9 +12,14 @@ const initialState: TweetsState = {
   status: 'idle',
 };
 
+interface Args {
+  query: string,
+  max_id: string,
+}
+
 export const fetchTweets = createAsyncThunk(
   'tweets/fetchTweets',
-  async (args: any) => {
+  async (args: Args) => {
     const { query, max_id } = args
     const response = await fetchData(query, max_id);
     if (response.request.status === 200) {

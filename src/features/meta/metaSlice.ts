@@ -5,14 +5,14 @@ import { fetchTweets } from '../tweets/tweetsSlice';
 export interface MetaState {
   completed_in: number,
   count: number,
-  max_id: number,
+  max_id: string,
   query: string
 }
 
 const initialState: MetaState = {
   completed_in: 0,
   count: 0,
-  max_id: 0,
+  max_id: '0',
   query: '',
 }
 
@@ -24,7 +24,7 @@ export const metaSlice = createSlice({
       // TODO reset to a init state
       state.completed_in = 0
       state.count = 0
-      state.max_id = 0
+      state.max_id = '0'
       state.query = ''
     },
   },

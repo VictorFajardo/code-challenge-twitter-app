@@ -1,9 +1,33 @@
 import { useAppSelector } from '../../common/hooks';
 import { selectHashtags } from '../../features/hashtags/hashtagsSlice'
 import { selectFilter } from '../../features/filter/filterSlice'
-import Hashtag from './Hashtags/FilterHashtag'
+import FilterHashtag from './Hashtags/FilterHashtag'
 import site from '../../data/site'
-import '../../sass/filter.css'
+import styled from 'styled-components'
+
+const Wrapper = styled.section`
+  margin-top: 20px;
+  @media all and (min-width: 860px) {
+    margin: 10px;
+  }
+`
+const Container = styled.div`
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .05);
+  border-radius: 4px;
+  padding: 9px 12px;
+`
+const Title = styled.h2<{ hashtags: number}>`
+  padding: 11px 4px;
+  font-size: 19px;
+  margin: 0;
+  margin-bottom: ${({ hashtags }) => hashtags > 0 ? '8px' : 0};
+  @media all and (min-width: 860px) {
+    font-size: 16px;
+    padding: 4px 3px 0px;
+    margin-bottom: ${({ hashtags }) => hashtags > 0 ? '25px' : 0};
+  }
+`
 
 const Filter = () => {
   const { filter: { title } } = site
@@ -11,17 +35,17 @@ const Filter = () => {
   const filter = useAppSelector(selectFilter)
 
   return (
-    <section className="Filter">
-      <div className="Filter-container">
-        <h2 className={`Filter-container-title ${hashtags.length ? 'active': ''}`}>{title}</h2>
+    <Wrapper>
+      <Container>
+        <Title hashtags={hashtags.length}>{title}</Title>
         {hashtags.length > 0 && hashtags.map((hashtag: string, i: number) => {
           return (
-            <Hashtag key={i} text={hashtag} status={filter.includes(hashtag.toLocaleLowerCase()) ? true: false}/>
+            <FilterHashtag key={i} text={hashtag} status={filter.includes(hashtag.toLocaleLowerCase()) ? true : false} />
           )
         })
         }
-      </div>
-    </section>
+      </Container>
+    </Wrapper>
   )
 }
 

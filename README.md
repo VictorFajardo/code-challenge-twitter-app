@@ -4,6 +4,7 @@
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
 - [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkitt)
+- [💅 CSS-IN-JS: Styled Components](#-css-in-js-styled-components)
 - [🐦 Tweet Feed: User Interaction](#-tweet-feed-user-interaction)
 - [🗄️ Store Structure](#%EF%B8%8F-store-structure)
 - [📑 Documentation Links](#-documentation-links)
@@ -13,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ---
 ### 🚀 Demo
 
-You can access the demo for the fullpage navigation here:\
+Please visit the demo for the fullpage navigation here:\
 [https://coding-challenge-twitter-app.netlify.app/](https://coding-challenge-twitter-app.netlify.app/)
 ### ✨ Development
 
@@ -40,45 +41,55 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 ├── 📁build
 ├── 📁public
 └── 📁src
-    ├── index.css                     // style for index.tsx
-    ├── index.tsx                     // initialize the app, invokes App.tsx
+    ├── index.tsx                         // initialize the app, invokes App.tsx
     ├── 📁app
+    │   ├── App.test.tsx                  // App test cases
+    │   └── App.tsx                       // App component, includes all the components
     │   ├── 📁components
-    │   │   ├── Filter.tsx            // section component, renders hastags to be iltered
-    │   │   ├── Hashtag.tsx           // element component: hashtag
-    │   │   ├── Header.tsx            // section component, renders title
-    │   │   ├── List.tsx              // section component, renders tweets
-    │   │   └── Search.tsx            // section component, contains the input  ield
-    │   ├── App.css                   // App css styles
-    │   ├── App.test.tsx              // App test cases
-    │   └── App.tsx                   // App component, includes all the components
+    │   │   ├── Filter.tsx                // section component, renders hastags to be filtered
+    │   │   ├── Header.tsx                // section component, renders title
+    │   │   ├── List.tsx                  // section component, renders filtered tweets
+    │   │   ├─── Search.tsx               // section component, contains the input field
+    │   │   ├─── 📁Hashtags
+    │   │   │    ├── BaseHashtag.tsx      // element component: basic hashtag
+    │   │   │    └── FilterHashtag.tsx    // element component: filter hashtag
+    │   │   └─── 📁Tweets
+    │   │        └── Tweet.tsx            // element component: tweet
     ├── 📁common
-    │   └── hooks.ts                  // custom hooks: useAppDispatch(), useAppSelector()
+    │   └── hooks.ts                      // custom hooks: useAppDispatch(), useAppSelector()
     ├── 📁data
-    │   ├── api.ts                    // api server information
-    │   └── site.ts                   // all the app texts to be rendered information
+    │   ├── api.ts                        // api server information
+    │   └── site.ts                       // all the app texts to be rendered information
     ├── 📁features
     │   ├── 📁filter
-    │   │   └── filterSlice.ts        // actions and reducer for state.filter
+    │   │   └── filterSlice.ts            // actions and reducer for state.filter
     │   ├── 📁hashtags
-    │   │   └── hashtagsSlice.ts      // actions and reducer for state.hashtags
+    │   │   └── hashtagsSlice.ts          // actions and reducer for state.hashtags
     │   ├── 📁meta
-    │   │   └── metaSlice.ts          // actions and reducer for state.meta
+    │   │   └── metaSlice.ts              // actions and reducer for state.meta
     │   ├── 📁query
-    │   │   └── querySlice.ts        // actions and reducer for state.query
+    │   │   └── querySlice.ts             // actions and reducer for state.query
     │   └── 📁tweets
-    │       ├── tweetsSlice.ts        // actions and reducer for state.query
-    │       └── tweetsApi.ts          // async request for data
+    │       ├── tweetsSlice.ts            // actions and reducer for state.query
+    │       └── tweetsApi.ts              // async request for data
     ├── 📁img
-    │   └── magnifying-glass.svg      // icon for the Search component
+    │   └── magnifying-glass.svg          // icon for the Search component
     └── 📁store
-        └── index.ts                  // app store file
+        └── index.ts                      // app store file
+    └── 📁style
+        └── GlobalStyle.ts                // global style rules
 ```
 ### ⚛️ Redux Toolkit
 
 This app uses **Redux Toolkit** as source of state managment, for more information visit:
 
 - [Redux Toolkit - Tutorials Overview](https://redux-toolkit.js.org/tutorials/overview).
+
+### 💅 CSS-IN-JS: Styled Components
+
+This app uses **Styled Components** to manage the all the style rules. Every component file has its own component style rules, aditionally a global style file can be founded in `/style/GlobalStyle.ts`, for more information visit:
+
+- [Styled Components Documentation](https://styled-components.com/docs)
 ### 🐦 Tweet Feed: User Interaction
 
 **Fetching Tweets**\
@@ -113,7 +124,7 @@ After a cta `Hashtag` is clicked the `addFilter(hashtag)` action is dispatched t
     meta: {
       completed_in: number,
       count: number,
-      max_id: number,
+      max_id: string,
       query: string
     },
     query: {
@@ -141,6 +152,7 @@ After a cta `Hashtag` is clicked the `addFilter(hashtag)` action is dispatched t
     }
   }
 ```
+
 ### 📑 Documentation Links
 
 - [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

@@ -10,7 +10,7 @@
 - [📡 Proxy Server](#-proxy-server)
 - [✨ Development](#-development)
 - [📁 File Structure](#-file-structure)
-- [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkitt)
+- [⚛️ Redux Toolkit](#%EF%B8%8F-redux-toolkit)
 - [💅 CSS-IN-JS: Styled Components](#-css-in-js-styled-components)
 - [🐦 Tweet Feed: User Interaction](#-tweet-feed-user-interaction)
 - [🗄️ Store Structure](#%EF%B8%8F-store-structure)

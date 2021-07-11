@@ -22,7 +22,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### 🚀 Demo
 
 Please visit the demo for the fullpage navigation here:\
-[https://code-challenge-twitter-app.netlify.app/](https://code-challenge-twitter-app.netlify.app/)
+[https://tweet-feed.netlify.app/](https://tweet-feed.netlify.app/)
 
 **Desktop View:**
 <p align="center">
